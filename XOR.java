@@ -28,6 +28,11 @@ public class XOR {
     }
 
     private static byte[] cipher(int[] key, byte[] message) {
+        // If the key has no length, theres no need to cipher
+        if (key.length == 0) {
+            return message;
+        }
+
         int keyIndex = 0;
         byte[] newBytes = new byte[message.length];
 
