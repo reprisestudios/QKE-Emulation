@@ -64,13 +64,13 @@ public class XOR {
         return newBytes;
     }
 
-    private static byte setBit(byte _byte, int bitPosition, boolean bitValue) {
-        if (bitValue)
-            return (byte) (_byte | (1 << bitPosition));
-        return (byte) (_byte & ~(1 << bitPosition));
+    private static byte setBit(byte _byte, int bitPos, boolean bitState) {
+        if (bitState)
+            return (byte) (_byte | (1 << bitPos));
+        return (byte) (_byte & ~(1 << bitPos));
     }
 
-    private static Boolean getBit(byte _byte, int bitPosition) {
-        return (_byte & (1 << bitPosition)) != 0;
+    private static Boolean getBit(byte _byte, int bitPos) {
+        return (_byte & (1 << bitPos)) != 0;
     }
 }
