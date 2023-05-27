@@ -4,6 +4,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 
 public class QKEEmulation {
 
@@ -61,24 +62,28 @@ public class QKEEmulation {
 
         System.out.println();
 
+        // Reader for user input
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.print("Please input a message for the transmitter to send: ");
         String message = reader.readLine();
 
+        // Transmitter sending message
         byte[] tEncoded = transmitter.sendMessage(message);
         String tDecoded = receiver.receiveMessage(tEncoded);
 
+        System.out.println("Encoded message: " + new String(tEncoded, StandardCharsets.UTF_8));
         System.out.println("Decoded message by reciever: " + tDecoded);
         System.out.println();
 
         System.out.print("Please input a message for the reciever to send: ");
         message = reader.readLine();
 
+        // Receiver sending message
         byte[] rEncoded = receiver.sendMessage(message);
         String rDecoded = transmitter.receiveMessage(rEncoded);
 
+        System.out.println("Encoded message: " + new String(rEncoded, StandardCharsets.UTF_8));
         System.out.println("Decoded message by transmitter: " + rDecoded);
-
     }
 }
