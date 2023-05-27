@@ -1,10 +1,9 @@
-import java.util.ArrayList;
-import java.util.List;
+///Name: Ethyn Gillies
+///ID: 1503149
+
 import java.util.Random;
 
-public class Transmitter {
-    int[] bits, polarisations, key;
-
+public class Transmitter extends Module {
     /**
      * Creates random qubits and stores their bit values and polarisations
      * 
@@ -34,24 +33,5 @@ public class Transmitter {
         }
 
         return qubits;
-    }
-
-    public int[] matchQubits(int[] inputPolarisations) {
-        List<Integer> keyList = new ArrayList<>();
-
-        for (int i = 0; i < polarisations.length; i++) {
-            if (inputPolarisations[i] == polarisations[i]) {
-                keyList.add(bits[i]);
-            }
-        }
-
-        // Converting list of Integers to int[]
-        key = keyList.stream().mapToInt(i -> i).toArray();
-
-        return key;
-    }
-
-    public int[] transmitPolarisations() {
-        return polarisations;
     }
 }

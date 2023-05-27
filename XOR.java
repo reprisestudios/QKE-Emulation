@@ -1,11 +1,28 @@
+///Name: Ethyn Gillies
+///ID: 1503149
+
 import java.nio.charset.StandardCharsets;
 
 public class XOR {
 
+    /**
+     * Decodes a string message using XOR
+     * 
+     * @param key   The key as an array of integers to be treated as bits
+     * @param bytes The encoded bytes to decode
+     * @return The decoded message as a String
+     */
     public static String decode(int[] key, byte[] bytes) {
         return new String(cipher(key, bytes), StandardCharsets.UTF_8);
     }
 
+    /**
+     * Encodes a message using XOR
+     * 
+     * @param key     The key as an array of integers to be treated as bits
+     * @param message The string to encode into bytes
+     * @return The encoded message as bytes
+     */
     public static byte[] encode(int[] key, String message) {
         return cipher(key, message.getBytes(StandardCharsets.UTF_8));
     }

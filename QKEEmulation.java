@@ -1,3 +1,6 @@
+///Name: Ethyn Gillies
+///ID: 1503149
+
 public class QKEEmulation {
 
     public static void main(String[] args) {
@@ -20,19 +23,25 @@ public class QKEEmulation {
             return;
         }
 
+        // Creating transmitter and receiver
         Transmitter transmitter = new Transmitter();
         Receiver receiver = new Receiver();
 
+        // Transmitter creating randomised qubits
         Qubit[] sentQubits = transmitter.randomiseQubits(streamLength);
 
+        // Receiver measures qubits using random polarisations
         receiver.readQubits(sentQubits);
 
+        // Both transmit and exchange polarisation types used
         int[] transmitterPolarisations = transmitter.transmitPolarisations();
         int[] receiverPolarisations = receiver.transmitPolarisations();
 
+        // Both match polarisation types and thus decide on a secret key
         int[] transmitterKey = transmitter.matchQubits(receiverPolarisations);
         int[] receiverKey = receiver.matchQubits(transmitterPolarisations);
 
+        // Building string for both keys for displaying on console
         StringBuilder tBuilder = new StringBuilder(transmitterKey.length);
         for (int i : transmitterKey) {
             tBuilder.append(i);
@@ -45,5 +54,6 @@ public class QKEEmulation {
 
         System.out.println("Transmitter key: " + tBuilder.toString());
         System.out.println("Reciever key: " + rBuilder.toString());
+
     }
 }
