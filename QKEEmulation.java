@@ -1,9 +1,13 @@
 ///Name: Ethyn Gillies
 ///ID: 1503149
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class QKEEmulation {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         int streamLength = 0;
 
         if (args.length != 1) {
@@ -54,6 +58,27 @@ public class QKEEmulation {
 
         System.out.println("Transmitter key: " + tBuilder.toString());
         System.out.println("Reciever key: " + rBuilder.toString());
+
+        System.out.println();
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.print("Please input a message for the transmitter to send: ");
+        String message = reader.readLine();
+
+        byte[] tEncoded = transmitter.sendMessage(message);
+        String tDecoded = receiver.receiveMessage(tEncoded);
+
+        System.out.println("Decoded message by reciever: " + tDecoded);
+        System.out.println();
+
+        System.out.print("Please input a message for the reciever to send: ");
+        message = reader.readLine();
+
+        byte[] rEncoded = receiver.sendMessage(message);
+        String rDecoded = transmitter.receiveMessage(rEncoded);
+
+        System.out.println("Decoded message by transmitter: " + rDecoded);
 
     }
 }
