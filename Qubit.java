@@ -6,7 +6,8 @@ public class Qubit {
     int polarisation;
 
     public void newQubit(int value, int polarisation) {
-
+        this.value = value;
+        this.polarisation = polarisation;
     }
 
     public void setQubit(int value, int polarisation) {
@@ -19,7 +20,7 @@ public class Qubit {
             return value;
         } else {
             Random rnd = new Random();
-            this.value = rnd.nextInt(1);
+            this.value = rnd.nextInt(2);
             this.polarisation = polarisation;
             return this.value;
         }

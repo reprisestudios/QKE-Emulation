@@ -9,7 +9,7 @@ public class Receiver {
         polarisations = new int[qubits.length];
 
         for (int i = 0; i < qubits.length; i++) {
-            polarisations[i] = rnd.nextInt(1);
+            polarisations[i] = rnd.nextInt(2);
 
             bits[i] = qubits[i].measure(polarisations[i]);
         }
