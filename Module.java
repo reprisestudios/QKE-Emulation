@@ -79,9 +79,18 @@ public class Module {
     /**
      * Sets polarisations. Used only for testing
      * 
-     * @param polarisations
+     * @param polarisations The polarisations to set
      */
     public void setPolarisations(int[] polarisations) {
         this.polarisations = polarisations;
+    }
+
+    /**
+     * Sets key. Used only for testing
+     * 
+     * @param key The key to set
+     */
+    public void setKey(int[] key) {
+        this.key = key;
     }
 }
