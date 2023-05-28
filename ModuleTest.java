@@ -1,3 +1,6 @@
+///Name: Ethyn Gillies
+///ID: 1503149
+
 import org.junit.jupiter.api.*;
 
 public class ModuleTest {
@@ -5,6 +8,7 @@ public class ModuleTest {
         @Test
         @DisplayName("Match Qubits Test")
         public void matchQubitsTest() {
+                // Polarisations and bits setting
                 Module module = new Module();
                 int[] initialPolarisations = new int[] {
                                 1, 0, 0, 1, 0, 1, 1, 1
@@ -23,6 +27,7 @@ public class ModuleTest {
 
                 int[] key = module.matchQubits(newPolarisations);
 
+                // Expected key output
                 int[] expected = new int[] {
                                 0, 0, 1, 1
                 };

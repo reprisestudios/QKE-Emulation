@@ -1,3 +1,6 @@
+///Name: Ethyn Gillies
+///ID: 1503149
+
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.*;

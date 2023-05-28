@@ -1,3 +1,6 @@
+///Name: Ethyn Gillies
+///ID: 1503149
+
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.*;
@@ -13,6 +16,7 @@ public class QubitTest {
     public void measureTest(int value, int polarisation) {
         Qubit qubit = new Qubit(value, polarisation);
 
+        // Result should match since polarisation matches
         int result = qubit.measure(polarisation);
 
         Assertions.assertEquals(result, value);

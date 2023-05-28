@@ -1,3 +1,6 @@
+///Name: Ethyn Gillies
+///ID: 1503149
+
 import java.util.Random;
 import org.junit.jupiter.api.*;
 

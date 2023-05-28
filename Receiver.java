@@ -16,7 +16,9 @@ public class Receiver extends Module {
         bits = new int[qubits.length];
         polarisations = new int[qubits.length];
 
+        // Check each qubit
         for (int i = 0; i < qubits.length; i++) {
+            // Pick a random polarisation
             polarisations[i] = rnd.nextInt(2);
 
             bits[i] = qubits[i].measure(polarisations[i]);
