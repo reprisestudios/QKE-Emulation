@@ -57,4 +57,31 @@ public class Module {
     public int[] transmitPolarisations() {
         return polarisations;
     }
+
+    /**
+     * Returns bits. Used only for testing
+     * 
+     * @return The bits for this module
+     */
+    public int[] getBits() {
+        return bits;
+    }
+
+    /**
+     * Sets bits. Used only for testing
+     * 
+     * @param bits
+     */
+    public void setBits(int[] bits) {
+        this.bits = bits;
+    }
+
+    /**
+     * Sets polarisations. Used only for testing
+     * 
+     * @param polarisations
+     */
+    public void setPolarisations(int[] polarisations) {
+        this.polarisations = polarisations;
+    }
 }

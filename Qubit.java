@@ -8,12 +8,28 @@ public class Qubit {
     int value;
     int polarisation;
 
-    public void newQubit(int value, int polarisation) {
+    public Qubit(int value, int polarisation) {
+        if (value > 1 || value < 0) {
+            return;
+        }
+
+        if (polarisation > 1 || polarisation < 0) {
+            return;
+        }
+
         this.value = value;
         this.polarisation = polarisation;
     }
 
-    public void setQubit(int value, int polarisation) {
+    public void set(int value, int polarisation) {
+        if (value > 1 || value < 0) {
+            return;
+        }
+
+        if (polarisation > 1 || polarisation < 0) {
+            return;
+        }
+
         this.value = value;
         this.polarisation = polarisation;
     }

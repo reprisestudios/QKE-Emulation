@@ -18,13 +18,13 @@ public class Transmitter extends Module {
 
         // For each qubit based on the specified stream length
         for (int i = 0; i < streamLength; i++) {
-            Qubit qubit = new Qubit();
+
             Random rnd = new Random();
 
             int value = rnd.nextInt(2);
             int polarisation = rnd.nextInt(2);
 
-            qubit.newQubit(value, polarisation);
+            Qubit qubit = new Qubit(value, polarisation);
 
             // Store values for checking later
             qubits[i] = qubit;
